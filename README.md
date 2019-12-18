@@ -13,9 +13,9 @@
 
 > Annotation_White_Background.py
 
-    白背景の画像に対して，背景付けを行う
+    白背景の画像に対して，背景付けを行う.
 
 > Image_Resize.py
 
     画像を416x416にリサイズする．
-    Image_Divideで画像4分割したように使う．
+    Image_Divideで画像4分割した用に使う．
