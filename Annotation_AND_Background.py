@@ -5,10 +5,10 @@ import sys
 import glob,os
 
 
-path_kamo = r'C:\iida\learning\114\10\image\001\*.jpg'
+path_kamo = r'C:\iida\unrelated\img\kamo\*.jpg'
 path_back = r'C:\iida\unrelated\img\background\*.jpg'
-path_w = r'C:\iida\learning\114\darknet-tools\datasets\Labels\001'
-path_imge = r'C:\iida\learning\114\darknet-tools\datasets\Images\001'
+path_w = r'C:\iida\unrelated\img\test'
+path_imge = r'C:\iida\unrelated\img\test'
 
 #どのくらい離すか
 mergine=0.00
@@ -37,8 +37,7 @@ def make_label(path,back,i):
             #pxにy,x座標の画素値を代入
             px=img[y,x]
             #print("px:{} sum(px):{}".format(px,sum(px)))
-            #対象物によって「255」の値を変更する
-            if np.average(px) != 200:
+            if np.average(px) != 255:
 
                 #左の一番小さい座標を取得
                 if left>x:
@@ -54,7 +53,7 @@ def make_label(path,back,i):
                     lower=y
                 
             #
-            else:
+            if np.average(px) >= 200:
                 #RGBではなくBGRに注意
                 b,g,r = im_back[y,x]
                 img[y,x] = [b,g,r]

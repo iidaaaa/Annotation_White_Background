@@ -35,7 +35,7 @@ def main():
                 #img[Y座標, X座標]
                 pi = im_kamo[y,x]
                 #対象物によって「255」の数値を変更する．
-                if np.average(pi) == 200:
+                if np.average(pi) >= 200:
                     #RGBではなくBGRに注意
                     b,g,r = im_back[y,x]
                     im_kamo[y,x] = [b,g,r]
